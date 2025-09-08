@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Product Store</title>
+    <style>
+        body {
+            background-color: #e4fce7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: lightblue;
+            padding: 15px;
+            border-bottom: 3px solid black;
+        }
+        header img {
+            height: 80px;
+            width: 80px;
+            margin-right: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #cce6ff;
+            border-bottom: 2px solid black;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: deepskyblue;
+            color: white;
+        }
+
+        /* Login form */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        form {
+            background: white;
+            padding: 25px;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 320px;
+            text-align: center;
+        }
+        form h2 {
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: lightblue;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        form input[type="submit"]:hover {
+            background-color: deepskyblue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img src="kluh.png" alt="Logo">
+        <h1>Welcome to Online Product Store</h1>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="loginpage.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <form onsubmit="return loginUser();">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <!-- JavaScript Validation -->
+    <script>
+        function loginUser() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please enter both username and password!");
+                return false;
+            }
+
+            alert("Login successful (dummy validation)");
+            return true;
+        }
+    </script>
+</body>
+</html>
